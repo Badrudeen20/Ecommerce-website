@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*******navigation*********/
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container .navigation {
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  background-color: #40E0D0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+
+.container .navigation.active {
+  width: 67px;
+}
+
+@media screen and (max-width: 900px) {
+  .container .navigation {
+    left: -270px;
+  }
+  .container .navigation.active {
+    left: 0;
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container .navigation.active {
+    width: 100%;
+    left: 0px;
+  }
+}
+
+.container .navigation .close {
+  position: absolute;
+  display: none;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .container .navigation .close {
+    display: block;
+  }
+}
+
+.container .navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container .navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  cursor: pointer;
+}
+
+.container .navigation ul li:nth-child(1) a .icon i {
+  font-size: 2rem;
+}
+
+.container .navigation ul li:nth-child(1):hover {
+  background: transparent;
+}
+
+.container .navigation ul li:hover {
+  background-color: #fff;
+}
+
+.container .navigation ul li a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .navigation ul li a .icon i {
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+}
+
+.container .navigation ul li a .title {
+  font-size: 1.4rem;
+}
+
+/*******main ***********/
+.container .main {
+  position: absolute;
+  width: calc(100% - 270px);
+  left: 270px;
+  min-height: 100vh;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /******cardbox********/
+  /**********table **************/
+}
+
+.container .main.active {
+  width: calc(100% - 67px);
+  left: 67px;
+}
+
+@media screen and (max-width: 900px) {
+  .container .main {
+    width: 100%;
+    left: 0;
+  }
+  .container .main.active {
+    width: calc(100% - 270px);
+    left: 270px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container .main {
+    width: 100%;
+    left: 0;
+  }
+  .container .main.active {
+    width: 100%;
+    left: 0px;
+  }
+}
+
+.container .main .topbar {
+  width: 100%;
+  height: 60px;
+  -webkit-box-shadow: 4px 4px 8px #e3e3e3;
+          box-shadow: 4px 4px 8px #e3e3e3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+}
+
+.container .main .topbar .toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.container .main .topbar .search input[type=text] {
+  width: 240px;
+  padding: .6rem .8rem;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  background: #ECF0F1;
+}
+
+.container .main .topbar .user {
+  position: relative;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container .main .topbar .user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .main .cardBox {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .container .main .cardBox {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container .main .cardBox {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container .main .cardBox {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.container .main .cardBox .card {
+  background: #F7F9F9;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.8rem;
+  border-radius: 8px;
+}
+
+.container .main .cardBox .card .num {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.container .main .cardBox .card .cardName {
+  font-size: .9rem;
+  color: #424949;
+}
+
+.container .main .cardBox .card .iconBox {
+  color: #76D7C4;
+}
+
+.container .main .cardBox .card .iconBox i {
+  font-size: 1.5rem;
+}
+
+.container .main .details {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.container .main .details .cardHeader {
+  text-align: center;
+}
+
+.container .main .details .cardHeader h2 {
+  color: #17202A;
+}
+
+.container .main .details .addbtncontainer a {
+  background: #40E0D0;
+  font-size: .8rem;
+  padding: .5rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  margin-right: .4rem;
+}
+
+.container .main .details .styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.container .main .details .styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.container .main .details .styled-table th, .container .main .details .styled-table td {
+  padding: 12px 15px;
+}
+
+.container .main .details .styled-table tbody tr {
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+}
+
+.container .main .details .styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.container .main .details .styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.container .main .details .styled-table tbody tr:hover {
+  color: #009879;
+}
+
+.container .main .details .styled-table tbody tr td .flex {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .main .details .styled-table tbody tr td .btn {
+  background: #40E0D0;
+  font-size: .8rem;
+  padding: .5rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  margin-right: .4rem;
+}
+
+.container .main .details .styled-table tbody tr td img {
+  width: 100px;
+  height: auto;
+}
+
+/**********Form**************/
+form {
+  padding: 2rem 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  form {
+    padding: 2rem 5rem;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  form {
+    padding: 2rem 8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  form {
+    padding: 2rem 11rem;
+  }
+}
+
+form h2 {
+  text-align: center;
+  color: #424949;
+}
+
+form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: .4rem;
+}
+
+form .form-group textarea {
+  height: 100px;
+  resize: none;
+  outline: none;
+  padding: .7rem;
+}
+
+form .form-group label {
+  font-size: 1rem;
+  margin-bottom: .4rem;
+}
+
+form .form-group input {
+  padding: .7rem;
+  outline: none;
+}
+
+form .form-group select {
+  padding: .7rem;
+}
+
+form .form-group .file-wrap {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+form .form-group .file-wrap::after {
+  content: attr(data-name);
+  position: absolute;
+  font-size: .8rem;
+  top: 0;
+  left: 0;
+  padding: .7rem 1rem;
+  display: block;
+  width: calc(100%-180px);
+  pointer-events: none;
+}
+
+form .form-group .file-wrap::before {
+  position: absolute;
+  content: 'Upload';
+  top: 0;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background: #0AEBBF;
+  font-size: .8rem;
+  padding: .72rem 2rem;
+}
+
+form .form-group .file-wrap input[type=file] {
+  opacity: 0;
+}
+
+form button {
+  padding: .6rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  outline: none;
+  background: #0AEBBF;
+  color: #FBFCFC;
+  border: none;
+}
+
+form .msg {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
